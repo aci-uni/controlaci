@@ -1,0 +1,503 @@
+.contest-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contest-header {
+  margin-bottom: 2rem;
+}
+
+.contest-header h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.contest-header p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.contest-meta {
+  display: flex;
+  gap: 2rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.tab:hover:not(.active) {
+  background: #f5f5f5;
+}
+
+/* Hours Section */
+.hours-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.summary-card h3 {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card .big-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.summary-card span {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.clock-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.clock-in h3, .clock-out h3 {
+  margin-bottom: 0.5rem;
+}
+
+.clock-in p, .clock-out p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.photo-upload {
+  margin-bottom: 1rem;
+}
+
+.photo-upload input[type="file"] {
+  width: 100%;
+  padding: 1rem;
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.photo-preview {
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.photo-preview img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.photo-preview.small img {
+  max-height: 100px;
+}
+
+.clock-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.clock-button.entry {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+}
+
+.clock-button.exit {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+}
+
+.clock-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.clock-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Activities */
+.activities-section {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.activities-section h4 {
+  margin-bottom: 1rem;
+}
+
+.activity-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.remove-activity {
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.activity-item input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.activity-item input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px dashed #ddd;
+  border-radius: 6px;
+}
+
+.add-activity {
+  width: 100%;
+  padding: 0.75rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Entries History */
+.entries-history {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.entries-history h3 {
+  margin-bottom: 1rem;
+}
+
+.no-entries {
+  color: #999;
+  text-align: center;
+  padding: 2rem;
+}
+
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.entry-item {
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.entry-date {
+  font-weight: bold;
+  color: #667eea;
+}
+
+.entry-times {
+  display: flex;
+  gap: 1rem;
+  color: #666;
+}
+
+.entry-hours {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.entry-activities {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.activity-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.activity-preview img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Team Section */
+.team-chart {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.team-chart h3 {
+  margin-bottom: 1rem;
+}
+
+.chart-container {
+  height: 300px;
+}
+
+.team-stats {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.team-stats h3 {
+  margin-bottom: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.stat-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stat-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.stat-info {
+  margin-bottom: 0.75rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.stat-row span {
+  color: #666;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+/* Daily Attendance */
+.daily-attendance {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.daily-attendance h3 {
+  margin-bottom: 1rem;
+}
+
+.date-picker {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.daily-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.daily-entry {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.daily-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.daily-user img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.daily-times {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.daily-hours {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.daily-activities {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.activity-thumb img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .contest-container {
+    padding: 1rem;
+  }
+  
+  .contest-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .tabs {
+    flex-direction: column;
+  }
+  
+  .entry-item {
+    grid-template-columns: 1fr;
+  }
+  
+  .daily-entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .chart-container {
+    height: 400px;
+  }
+}
