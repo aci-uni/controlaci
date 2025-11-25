@@ -1,6 +1,9 @@
 const multer = require('multer');
 const path = require('path');
 
+// File size limit constant (10MB)
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
 // Configure storage
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -26,7 +29,7 @@ const checkFileType = (file, cb) => {
 
 const upload = multer({
   storage,
-  limits: { fileSize: 10000000 }, // 10MB limit
+  limits: { fileSize: MAX_FILE_SIZE },
   fileFilter: function(req, file, cb) {
     checkFileType(file, cb);
   }

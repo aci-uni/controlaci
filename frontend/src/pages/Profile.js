@@ -68,7 +68,7 @@ const Profile = () => {
       setNewPhoto(null);
       setEditing(false);
     } catch (error) {
-      alert('Error al guardar la foto');
+      alert(error.response?.data?.message || 'Error al guardar la foto');
     } finally {
       setSaving(false);
     }

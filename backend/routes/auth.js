@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const { protect, admin } = require('../middleware/auth');
 const upload = require('../middleware/upload');
+const { authLimiter } = require('../middleware/rateLimit');
 
 const router = express.Router();
 
@@ -16,13 +17,14 @@ const generateToken = (id) => {
 // @route   POST /api/auth/register
 // @desc    Register a new user
 // @access  Public
-router.post('/register', async (req, res) => {
+router.post('/register', authLimiter, async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    // Validate username to prevent injection
-    if (!username || typeof username !== 'string' || username.length > 50) {
-      return res.status(400).json({ message: 'Nombre de usuario inválido' });
+    // Validate username - alphanumeric with underscore, 3-50 chars
+    const usernameRegex = /^[a-zA-Z0-9_]{3,50}$/;
+    if (!username || typeof username !== 'string' || !usernameRegex.test(username)) {
+      return res.status(400).json({ message: 'Nombre de usuario inválido. Use 3-50 caracteres alfanuméricos.' });
     }
 
     // Check if user exists
@@ -56,12 +58,13 @@ router.post('/register', async (req, res) => {
 // @route   POST /api/auth/login
 // @desc    Authenticate user & get token
 // @access  Public
-router.post('/login', async (req, res) => {
+router.post('/login', authLimiter, async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    // Validate username to prevent injection
-    if (!username || typeof username !== 'string' || username.length > 50) {
+    // Validate username - alphanumeric with underscore, 3-50 chars
+    const usernameRegex = /^[a-zA-Z0-9_]{3,50}$/;
+    if (!username || typeof username !== 'string' || !usernameRegex.test(username)) {
       return res.status(400).json({ message: 'Credenciales inválidas' });
     }
 

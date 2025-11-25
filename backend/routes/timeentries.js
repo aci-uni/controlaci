@@ -4,13 +4,14 @@ const TimeEntry = require('../models/TimeEntry');
 const Contest = require('../models/Contest');
 const { protect } = require('../middleware/auth');
 const upload = require('../middleware/upload');
+const { uploadLimiter } = require('../middleware/rateLimit');
 
 const router = express.Router();
 
 // @route   POST /api/timeentries/entry
 // @desc    Clock in (entrada)
 // @access  Private
-router.post('/entry', protect, upload.single('entryPhoto'), async (req, res) => {
+router.post('/entry', protect, uploadLimiter, upload.single('entryPhoto'), async (req, res) => {
   try {
     const { contestId } = req.body;
 
@@ -57,7 +58,7 @@ router.post('/entry', protect, upload.single('entryPhoto'), async (req, res) => 
 // @route   PUT /api/timeentries/exit/:id
 // @desc    Clock out (salida) with activities
 // @access  Private
-router.put('/exit/:id', protect, upload.array('activityPhotos', 10), async (req, res) => {
+router.put('/exit/:id', protect, uploadLimiter, upload.array('activityPhotos', 10), async (req, res) => {
   try {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
       return res.status(400).json({ message: 'ID de entrada inválido' });
