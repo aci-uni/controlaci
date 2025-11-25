@@ -1,0 +1,138 @@
+.home-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-header {
+  margin-bottom: 2rem;
+}
+
+.home-header h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.home-header p {
+  color: #666;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.no-contests-message {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+  border-left: 4px solid #ffa726;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.no-contests-message h3 {
+  color: #e65100;
+  margin-bottom: 0.5rem;
+}
+
+.no-contests-message p {
+  color: #666;
+}
+
+.contests-section {
+  margin-bottom: 2rem;
+}
+
+.contests-section h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.contests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.contest-card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.contest-card.member {
+  border-left: 4px solid #667eea;
+  cursor: pointer;
+}
+
+.contest-card.member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.contest-card.disabled {
+  opacity: 0.7;
+  background: #f5f5f5;
+}
+
+.contest-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.contest-card h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  padding-right: 80px;
+}
+
+.contest-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.contest-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.access-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  color: #999;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .contests-grid {
+    grid-template-columns: 1fr;
+  }
+}

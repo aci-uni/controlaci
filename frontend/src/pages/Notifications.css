@@ -1,0 +1,145 @@
+.notifications-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.notifications-header h1 {
+  color: #333;
+}
+
+.mark-all-btn {
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.mark-all-btn:hover {
+  opacity: 0.9;
+}
+
+.no-notifications {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.no-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.no-notifications p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notification-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.notification-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.notification-item.unread {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fff 100%);
+  border-left: 4px solid #667eea;
+}
+
+.notification-item.read {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.notification-item.success {
+  border-left-color: #4CAF50;
+}
+
+.notification-item.warning {
+  border-left-color: #ff9800;
+}
+
+.notification-item.danger {
+  border-left-color: #f44336;
+}
+
+.notification-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-message {
+  color: #333;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.notification-contest {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+.notification-date {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.unread-badge {
+  width: 10px;
+  height: 10px;
+  background: #667eea;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .notifications-container {
+    padding: 1rem;
+  }
+  
+  .notifications-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
